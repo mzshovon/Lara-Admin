@@ -1,97 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
-<!-- begin::Head -->
+
 <head>
-    <meta charset="utf-8"/>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>{{env('APP_NAME')}} | {{@$title}}</title>
+    <!-- Favicon icon -->
+    <link rel="icon" type="image/png" sizes="16x16" href="{{asset('/')}}media/images/favicon.png">
+    <link href="{{asset('/')}}assets/vendor/jqvmap/css/jqvmap.min.css" rel="stylesheet">
+	<link rel="stylesheet" href="{{asset('/')}}assets/vendor/chartist/css/chartist.min.css">
+    <link href="{{asset('/')}}assets/vendor/bootstrap-select/dist/css/bootstrap-select.min.css" rel="stylesheet">
+    <link href="{{asset('/')}}assets/css/style.css" rel="stylesheet">
+	<link href="https://cdn.lineicons.com/2.0/LineIcons.css" rel="stylesheet">
 
-    <title>{{env('APP_NAME')}} | {{@$pageTitle}}</title>
-    <meta name="description" content="">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no">
-
-    <!--begin::Web font -->
-    <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.16/webfont.js"></script>
-    <script>
-        WebFont.load({
-            google: {"families": ["Poppins:300,400,500,600,700", "Roboto:300,400,500,600,700"]},
-            active: function () {
-                sessionStorage.fonts = true;
-            }
-        });
-    </script>
-    <!--end::Web font -->
-    <!--end::Page Vendors Styles -->
-
-    <!--begin::Base Styles -->
-    <link href="{{asset('/')}}assets/vendors/base/vendors.bundle.css" rel="stylesheet" type="text/css"/>
-<!--RTL version:<link href="{{asset('/')}}assets/vendors/base/vendors.bundle.rtl.css" rel="stylesheet" type="text/css" />-->
-
-
-    <link href="{{asset('/')}}assets/demo/default/base/style.bundle.css" rel="stylesheet" type="text/css"/>
-
-    <link href="{{asset('/')}}css/app.css" rel="stylesheet" type="text/css"/>
-<!--RTL version:<link href="{{asset('/')}}assets/assets/demo/default/base/style.bundle.rtl.css" rel="stylesheet" type="text/css" />-->
-
-@yield('styles')
-
-<!--end::Base Styles -->
-
-    <link rel="shortcut icon" href="{{asset('/')}}assets/img/logo1.jpg"/>
-
-    <!--sweet alert-->
-    <script src="{{asset('/')}}assets/sweet-alert/sweetalert.min.js" type="text/javascript"></script>
-
-    <script
-            src="https://code.jquery.com/jquery-3.3.1.js"
-            integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
-            crossorigin="anonymous"></script>
 </head>
-<!-- end::Head -->
-
-
-<!-- begin::Body -->
-<body class="m-page--fluid m--skin- m-content--skin-light2 m-header--fixed m-header--fixed-mobile m-aside-left--enabled m-aside-left--skin-light m-aside-left--fixed m-aside-left--offcanvas m-footer--push m-aside--offcanvas-default">
-
-
-<!-- begin:: Page -->
-<div class="m-grid m-grid--hor m-grid--root m-page">
-
-
-    <!-- BEGIN: Header -->
-@include('admin.layouts.includes.header')
-<!-- END: Header -->
-
-    <!-- begin::Body -->
-    <div class="m-grid__item m-grid__item--fluid m-grid m-grid--ver-desktop m-grid--desktop m-body">
-
-        <!-- BEGIN: Left Aside -->
-    @include('admin.layouts.includes.sidebar')
-    <!-- END: Left Aside -->
-
-        @yield('content')
-
+<body>
+    <div id="preloader">
+        <div class="sk-three-bounce">
+            <div class="sk-child sk-bounce1"></div>
+            <div class="sk-child sk-bounce2"></div>
+            <div class="sk-child sk-bounce3"></div>
+        </div>
     </div>
-    <!-- end:: Body -->
 
-    <!-- begin::Footer -->
-@include('admin.layouts.includes.footer')
-<!-- end::Footer -->
+    <div id="main-wrapper">
+        @include('admin.layouts.includes.nav-header')
+        @include('admin.layouts.includes.chatbox')
+        @include('admin.layouts.includes.header')
+        @include('admin.layouts.includes.dez-nav')
+        <div class="content-body">
+            @yield('content')
+        </div>
+    </div>
 
-</div>
-<!-- end:: Page -->
-
-<!-- begin::Scroll Top -->
-<div id="m_scroll_top" class="m-scroll-top">
-    <i class="la la-arrow-up"></i>
-</div>
-<!-- end::Scroll Top -->
-
-<!--begin::Base Scripts -->
-<script src="{{asset('/')}}assets/vendors/base/vendors.bundle.js" type="text/javascript"></script>
-<script src="{{asset('/')}}assets/demo/default/base/scripts.bundle.js" type="text/javascript"></script>
-<!--end::Base Scripts -->
-
-@yield('scripts')
-
+    <script src="{{asset('/')}}assets/vendor/global/global.min.js"></script>
+	<script src="{{asset('/')}}assets/vendor/bootstrap-select/dist/js/bootstrap-select.min.js"></script>
+	<script src="{{asset('/')}}assets/vendor/chart.js/Chart.bundle.min.js"></script>
+    <script src="{{asset('/')}}assets/js/custom.min.js"></script>
+	<script src="{{asset('/')}}assets/js/deznav-init.js"></script>
+    <script src="{{asset('/')}}assets/vendor/waypoints/jquery.waypoints.min.js"></script>
+    <script src="{{asset('/')}}assets/vendor/jquery.counterup/jquery.counterup.min.js"></script>	
+	<script src="{{asset('/')}}assets/vendor/apexchart/apexchart.js"></script>	
+	<script src="{{asset('/')}}assets/vendor/peity/jquery.peity.min.js"></script>
+	<script src="{{asset('/')}}assets/js/dashboard/dashboard-1.js"></script>
+	
+	
 </body>
-<!-- end::Body -->
 </html>

@@ -46,6 +46,12 @@ class Handler extends ExceptionHandler
      */
     public function render($request, Exception $exception)
     {
+        if ($this->isHttpException($exception)) {
+            if ($exception->getStatusCode() == 404) {
+                $message = "The page you are looking for isn't found!";
+                return response()->view('admin.errors.404' ,['code'=>$exception->getStatusCode(),'message'=>$message]);
+            }
+        }
         return parent::render($request, $exception);
     }
 }
