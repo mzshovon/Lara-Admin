@@ -10,6 +10,8 @@
     <link rel="icon" type="image/png" sizes="16x16" href="{{asset('/')}}media/images/favicon.png">
     <link href="{{asset('/')}}assets/vendor/jqvmap/css/jqvmap.min.css" rel="stylesheet">
 	<link rel="stylesheet" href="{{asset('/')}}assets/vendor/chartist/css/chartist.min.css">
+    {{-- <link rel="stylesheet" href="{{asset('/')}}assets/vendor/select2/css/select2.min.css"> --}}
+    <link href="{{asset('/')}}assets/vendor/sweetalert2/dist/sweetalert2.min.css" rel="stylesheet">
     <link href="{{asset('/')}}assets/vendor/bootstrap-select/dist/css/bootstrap-select.min.css" rel="stylesheet">
     <link href="{{asset('/')}}assets/css/style.css" rel="stylesheet">
 	<link href="https://cdn.lineicons.com/2.0/LineIcons.css" rel="stylesheet">
@@ -33,18 +35,28 @@
             @yield('content')
         </div>
     </div>
-
+    <script src="{{asset('/')}}assets/vendor/sweetalert2/dist/sweetalert2.min.js"></script>
     <script src="{{asset('/')}}assets/vendor/global/global.min.js"></script>
-	<script src="{{asset('/')}}assets/vendor/bootstrap-select/dist/js/bootstrap-select.min.js"></script>
+	{{-- <script src="{{asset('/')}}assets/vendor/bootstrap-select/dist/js/bootstrap-select.min.js"></script> --}}
 	<script src="{{asset('/')}}assets/vendor/chart.js/Chart.bundle.min.js"></script>
     <script src="{{asset('/')}}assets/js/custom.min.js"></script>
 	<script src="{{asset('/')}}assets/js/deznav-init.js"></script>
     <script src="{{asset('/')}}assets/vendor/waypoints/jquery.waypoints.min.js"></script>
     <script src="{{asset('/')}}assets/vendor/jquery.counterup/jquery.counterup.min.js"></script>	
 	<script src="{{asset('/')}}assets/vendor/apexchart/apexchart.js"></script>	
+    <script src="{{asset('/')}}assets/vendor/select2/js/select2.full.min.js"></script>
+    <script src="{{asset('/')}}assets/js/plugins-init/select2-init.js"></script>
 	<script src="{{asset('/')}}assets/vendor/peity/jquery.peity.min.js"></script>
 	<script src="{{asset('/')}}assets/js/dashboard/dashboard-1.js"></script>
-	
-	
+    @if (Session::has('success_message'))
+    <script>
+        sweetAlert("Well Done !!", "{{Session::get('success_message')}}", "success");
+    </script>
+    @elseif(Session::has('error_message'))
+        <script>
+            sweetAlert("OOPS !!", "{{Session::get('error_message')}}", "error");
+        </script>
+    @endif
+        @yield('scripts')
 </body>
 </html>

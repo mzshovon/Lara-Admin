@@ -179,6 +179,14 @@ Route::group(['prefix'=>'admin', 'middleware'=> ['AdminAuth']], function (){
     Route::post('/slider/edit', 'Admin\SliderController@SliderUpdate');
     Route::post('/slider/delete', 'Admin\SliderController@SliderDelete');
     Route::post('/slider/getJson', 'Admin\SliderController@getJson');
+    
+    /*Sliders*/
+    Route::get('/sidebar-menus', 'Admin\UtilityController@view_side_menus');
+    Route::get('/sidebar-menus/add', 'Admin\UtilityController@add_side_menus');
+    Route::post('/sidebar-menus/add', 'Admin\UtilityController@insert_side_menus');
+    Route::get('/sidebar-menus/edit/{id}', 'Admin\UtilityController@edit_side_menus');
+    Route::post('/sidebar-menus/edit', 'Admin\UtilityController@update_side_menus');
+    Route::post('/sidebar-menus/delete', 'Admin\UtilityController@delete_side_menus');
 
     /*Get Coupons*/
     Route::get('/coupons', 'Admin\UtilityController@couponIndex');

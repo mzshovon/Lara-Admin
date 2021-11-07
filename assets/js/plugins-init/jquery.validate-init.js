@@ -56,6 +56,13 @@ jQuery(".form-valide").validate({
         },
         "val-terms": {
             required: !0
+        },
+        "val-menu": {
+            required: !0,
+            range:[0,255]
+        },
+        "val-status": {
+            required: !0,
         }
     },
     messages: {
@@ -83,7 +90,11 @@ jQuery(".form-valide").validate({
         "val-digits": "Please enter only digits!",
         "val-number": "Please enter a number!",
         "val-range": "Please enter a number between 1 and 5!",
-        "val-terms": "You must agree to the service terms!"
+        "val-terms": "You must agree to the service terms!",
+        "val-menu": {
+            required: "Please enter a menu name"
+        },
+        "val-status": "You must set the status!",
     },
 
     ignore: [],
