@@ -42,7 +42,7 @@ Thank you for considering contributing to the Laravel framework! The contributio
 
 ## Security Vulnerabilities
 
-If you discover a security vulnerability within this project, please send an e-mail to Moniruzzaman via [zaman.mnoi20188@gmail.com](mailto:zaman.mnoi20188@gmail.com). All security vulnerabilities will be promptly addressed.
+If you discover a security vulnerability within this project, please send an e-mail to Moniruzzaman via [zaman.monir20188@gmail.com](mailto:zaman.monir20188@gmail.com). All security vulnerabilities will be promptly addressed.
 
 ## License
 

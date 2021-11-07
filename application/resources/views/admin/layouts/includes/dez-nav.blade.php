@@ -37,8 +37,7 @@
             <a href="{{url('admin/sidebar-menus/add')}}" class="btn btn-primary btn-block light">+ Add Menus</a>
         </div>
         <div class="copyright">
-            <p><strong>Eatio - Restaurant Admin Dashboard</strong> © 2020 All Rights Reserved</p>
-            
+            <p><strong>Lara-Admin Dashboard</strong> © 2021 All Rights Reserved</p>
         </div>
     </div>
 </div>
