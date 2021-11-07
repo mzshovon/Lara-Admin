@@ -23,7 +23,16 @@
                     @if ($menu->self_menu->count() > 0)
                         <ul aria-expanded="false">
                             @foreach ($menu->self_menu as $sub_menu)
-                                <li><a href="{{$sub_menu->set_route==1 ? url($sub_menu->route): ''}}">{{$sub_menu->menu}}</a></li> 
+                                <li>
+                                    <a class="{{$sub_menu->self_menu->count() > 0 ? 'has-arrow':''}}" href="{{$sub_menu->set_route==1 ? url($sub_menu->route): ''}}" @if($sub_menu->self_menu->count() > 0) aria-expanded="false" @endif>{{$sub_menu->menu}}</a>
+                                    @if($sub_menu->self_menu->count() > 0) 
+                                        <ul aria-expanded="false">
+                                            @foreach ($sub_menu->self_menu as $list_menu)
+                                                <li><a href="{{$list_menu->set_route==1 ? url($list_menu->route): ''}}">{{$list_menu->menu}}</a></li>
+                                            @endforeach
+                                        </ul> 
+                                    @endif
+                                </li> 
                             @endforeach
                         </ul>
                     @endif
