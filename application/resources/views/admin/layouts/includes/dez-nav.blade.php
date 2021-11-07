@@ -23,7 +23,7 @@
                     @if ($menu->self_menu->count() > 0)
                         <ul aria-expanded="false">
                             @foreach ($menu->self_menu as $sub_menu)
-                            <li><a href="{{$sub_menu->set_route==1 ? $sub_menu->route: ''}}">{{$sub_menu->menu}}</a></li> 
+                                <li><a href="{{$sub_menu->set_route==1 ? url($sub_menu->route): ''}}">{{$sub_menu->menu}}</a></li> 
                             @endforeach
                         </ul>
                     @endif

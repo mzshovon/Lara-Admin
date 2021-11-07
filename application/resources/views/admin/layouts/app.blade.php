@@ -10,6 +10,7 @@
     <link rel="icon" type="image/png" sizes="16x16" href="{{asset('/')}}media/images/favicon.png">
     <link href="{{asset('/')}}assets/vendor/jqvmap/css/jqvmap.min.css" rel="stylesheet">
 	<link rel="stylesheet" href="{{asset('/')}}assets/vendor/chartist/css/chartist.min.css">
+    <link href="{{asset('/')}}assets/vendor/datatables/css/jquery.dataTables.min.css" rel="stylesheet">
     {{-- <link rel="stylesheet" href="{{asset('/')}}assets/vendor/select2/css/select2.min.css"> --}}
     <link href="{{asset('/')}}assets/vendor/sweetalert2/dist/sweetalert2.min.css" rel="stylesheet">
     <link href="{{asset('/')}}assets/vendor/bootstrap-select/dist/css/bootstrap-select.min.css" rel="stylesheet">
